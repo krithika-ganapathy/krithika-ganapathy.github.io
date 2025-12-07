@@ -1,3 +1,293 @@
-body{
-    background: linear-gradient(to right, #E8CAFC, #19108C);
+/* --- 1. Variables & Reset --- */
+:root {
+    /* Core Colors */
+    --bg-page: #F5F5FA;
+    --text-primary: #1A1B24;
+    --text-meta: #4F5165;
+    
+    /* Brand Colors */
+    --brand-primary: #265DFF;       /* Links, Buttons */
+    --brand-secondary: #4B3F72;     /* Headers */
+    --brand-accent: #FF9F50;        /* CTAs */
+    --brand-divider: #D4D6E7;       /* Borders */
+    
+    /* Tag Colors (Backgrounds) */
+    --tag-bg-tech: #E1E7FF;
+    --tag-bg-creative: #E9E1F7;
+    --tag-bg-interpretive: #FFF1E3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif; /* Clean tech font */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Merriweather', serif; /* Academic feel for headers */
+    color: var(--brand-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--brand-primary);
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 2. Navigation --- */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--brand-divider);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 700;
+    color: var(--brand-secondary);
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--brand-primary);
+}
+
+/* Special styling for 'Contact' in nav */
+.btn-nav {
+    color: var(--brand-primary) !important;
+    font-weight: 600;
+}
+
+/* --- 3. Hero / About Section --- */
+.hero-section {
+    padding-top: 150px; /* Account for fixed header */
+    padding-bottom: 80px;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.hero-section h2 {
+    font-size: 1.5rem;
+    color: var(--brand-secondary);
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.research-focus {
+    border-left: 4px solid var(--brand-primary);
+    padding-left: 15px;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin: 20px 0;
+}
+
+/* --- 4. General Section Styling --- */
+.section-pad {
+    padding: 60px 0;
+    border-top: 1px solid var(--brand-divider);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--brand-secondary);
+}
+
+/* --- 5. Cards & Projects --- */
+.card {
+    background: #FFFFFF;
+    border: 1px solid var(--brand-divider);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    margin-bottom: 0;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.meta {
+    color: var(--text-meta);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Card Grid for smaller items */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 6. Tags --- */
+.tag {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-left: 10px;
+}
+
+.tag-technical {
+    background-color: var(--tag-bg-tech);
+}
+
+.tag-creative {
+    background-color: var(--tag-bg-creative);
+}
+
+.tag-interpretive {
+    background-color: var(--tag-bg-interpretive);
+}
+
+/* --- 7. Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: var(--brand-primary);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #1F4ACC; /* Darker blue */
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--brand-primary);
+    color: var(--brand-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--tag-bg-tech);
+}
+
+.btn-text {
+    color: var(--brand-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-text:hover {
+    color: var(--brand-accent);
+}
+
+/* --- 8. Specific Placeholders --- */
+.video-container {
+    background-color: #eee;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    border-radius: 4px;
+    color: #666;
+}
+
+.interactive-grid-placeholder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.grid-item {
+    background-color: var(--tag-bg-interpretive);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--brand-divider);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.grid-item:hover {
+    background-color: #FFE6CC; /* Slightly darker amber */
+}
+
+/* --- 9. Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-meta);
+    font-size: 0.9rem;
 }
