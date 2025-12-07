@@ -111,12 +111,11 @@ nav {
 }
 
 .tag-interest {
-    background-color: #F0D271; 
-    border: 1px solid var(--brand-divider);
+    border-left: 4px solid var(--brand-primary);
+    padding-left: 15px;
+    font-size: 1.2rem;
     color: var(--text-primary);
-    margin-left: 0; /* Override default margin */
-    font-size: 0.85rem;
-    padding: 6px 16px;
+    margin: 20px 0;
 }
 
 .hero-bio {
