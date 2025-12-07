@@ -111,7 +111,7 @@ nav {
 }
 
 .tag-interest {
-    background-color: #FCEDBB; 
+    background-color: #F0D271; 
     border: 1px solid var(--brand-divider);
     color: var(--text-primary);
     margin-left: 0; /* Override default margin */
